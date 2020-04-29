@@ -9,20 +9,20 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.List;
 
 @Configuration
-public class ExampleMvcConfiguration extends DelegatingWebMvcConfiguration {
+public class MvcConfiguration extends DelegatingWebMvcConfiguration {
 
     @Configuration
     public class Inner implements WebMvcConfigurer {
 
         @Override
         public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
-            System.out.println("Method2 called: " + ExampleMvcConfiguration.this.getMessageConverters());
+            System.out.println("Method2 called: " + MvcConfiguration.this.getMessageConverters());
         }
     }
 
     @Override
     public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
-        System.out.println("Method1 called: " /*+ ExampleMvcConfiguration.this.getMessageConverters()*/);
+        System.out.println("Method1 called: " /*+ MvcConfiguration.this.getMessageConverters()*/);
     }
 
     @Bean

@@ -10,5 +10,5 @@ public class HelperConfiguration implements WebMvcConfigurer {
 
     @Autowired
     @Qualifier("dummy")
-    private ExampleMvcConfiguration.Dummy dummy;
+    private MvcConfiguration.Dummy dummy;
 }
